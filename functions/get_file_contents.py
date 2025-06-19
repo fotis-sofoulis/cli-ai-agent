@@ -8,7 +8,7 @@ def get_file_contents(working_directory, file_path):
 
     common_path = os.path.commonpath([real_working, real_file_path])
 
-    if not common_path == real_working:
+    if common_path != real_working:
         return f'Error: Cannot read "{file_path}" as it is outside the permitted working directory'
 
     if not os.path.isfile(real_file_path):

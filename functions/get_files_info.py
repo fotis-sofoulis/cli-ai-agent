@@ -7,7 +7,7 @@ def get_files_info(working_directory, directory=None):
         real_directory = os.path.realpath(os.path.join(real_working, directory))
     common_path = os.path.commonpath([real_working, real_directory])
 
-    if not common_path == real_working:
+    if common_path != real_working:
         return f'Error: Cannot list "{directory}" as it is outside the permitted working directory'
 
     if not os.path.isdir(real_directory):
